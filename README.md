@@ -1,4 +1,5 @@
 **CineStonks - Android Application**
+
 Mục tiêu: App đặt vé xem phim
 Nhiệm vụ: 
 - Nguyễn Trung Hiệp: 
