@@ -1,15 +1,16 @@
 🎥 **CineStonks - Android Application** 📈
-Mục tiêu:  
+
+Mục tiêu:
 Tạo ứng dụng di động đặt vé xem phim
 Tìm kiếm phim
 Thanh toán trực tuyến
 …
 Công nghệ:
-Ứng dụng di động  
+Ứng dụng di động
 Android Studio 
 Ngôn ngữ Java
 Design theo XML 
-Database
+Database:
 Firebase
 
 Nhiệm vụ:
