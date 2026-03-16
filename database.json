@@ -1,0 +1,610 @@
+{
+  "NguoiDung": {
+    "ND001": {
+      "HoTen": "Nguyễn Văn An",
+      "Email": "an.nguyen@email.com",
+      "SDT": "0901234567",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1990-05-15",
+      "CCCD": "001090123456",
+      "GioiTinh": "Nam"
+    },
+    "ND002": {
+      "HoTen": "Trần Thị Bích",
+      "Email": "bich.tran@email.com",
+      "SDT": "0912345678",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1995-08-22",
+      "CCCD": "002095123456",
+      "GioiTinh": "Nữ"
+    },
+    "ND003": {
+      "HoTen": "Lê Hoàng Cường",
+      "Email": "cuong.le@email.com",
+      "SDT": "0923456789",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1988-11-03",
+      "CCCD": "003088123456",
+      "GioiTinh": "Nam"
+    },
+    "ND004": {
+      "HoTen": "Phạm Tuấn Dũng",
+      "Email": "dung.pham@email.com",
+      "SDT": "0934567890",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "2000-01-19",
+      "CCCD": "004100123456",
+      "GioiTinh": "Nam"
+    },
+    "ND005": {
+      "HoTen": "Vũ Thu Hồng",
+      "Email": "hong.vu@email.com",
+      "SDT": "0945678901",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1998-07-30",
+      "CCCD": "005098123456",
+      "GioiTinh": "Nữ"
+    },
+    "ND006": {
+      "HoTen": "Đặng Minh Khang",
+      "Email": "khang.dang@email.com",
+      "SDT": "0956789012",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1992-12-12",
+      "CCCD": "006092123456",
+      "GioiTinh": "Nam"
+    },
+    "ND007": {
+      "HoTen": "Bùi Ngọc Lan",
+      "Email": "lan.bui@email.com",
+      "SDT": "0967890123",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1997-04-25",
+      "CCCD": "007097123456",
+      "GioiTinh": "Nữ"
+    },
+    "ND008": {
+      "HoTen": "Hồ Thanh Phúc",
+      "Email": "phuc.ho@email.com",
+      "SDT": "0978901234",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1985-09-09",
+      "CCCD": "008085123456",
+      "GioiTinh": "Nam"
+    },
+    "ND009": {
+      "HoTen": "Ngô Mai Quỳnh",
+      "Email": "quynh.ngo@email.com",
+      "SDT": "0989012345",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "2002-02-14",
+      "CCCD": "009102123456",
+      "GioiTinh": "Nữ"
+    },
+    "ND010": {
+      "HoTen": "Đỗ Trọng Sơn",
+      "Email": "son.do@email.com",
+      "SDT": "0990123456",
+      "MatKhau": "$2b$12$eImiTXuWVxfM37uY4JANjQ==",
+      "NgaySinh": "1994-06-18",
+      "CCCD": "010094123456",
+      "GioiTinh": "Nam"
+    }
+  },
+  "Phim": {
+    "P001": {
+      "TenPhim": "Mai",
+      "TheLoai": "Tâm lý, Tình cảm",
+      "MoTa": "Câu chuyện tình yêu chân thực và đầy trắc trở.",
+      "DoTuoi": 18,
+      "ThoiLuong": 131,
+      "PosterURL": "https://example.com/posters/mai.jpg",
+      "DaoDien": "Trấn Thành",
+      "DienVien": "Phương Anh Đào, Tuấn Trần, Hồng Đào"
+    },
+    "P002": {
+      "TenPhim": "Lật Mặt 7: Một Điều Ước",
+      "TheLoai": "Gia đình, Tâm lý",
+      "MoTa": "Hành trình xúc động của một người mẹ và các con.",
+      "DoTuoi": 13,
+      "ThoiLuong": 138,
+      "PosterURL": "https://example.com/posters/latmat7.jpg",
+      "DaoDien": "Lý Hải",
+      "DienVien": "Thanh Hiền, Trương Minh Cường, Đinh Y Nhung"
+    },
+    "P003": {
+      "TenPhim": "Nụ hôn bạc tỷ",
+      "TheLoai": "Hài, Lãng mạn",
+      "MoTa": "Câu chuyện dở khóc dở cười về một nụ hôn đổi đời.",
+      "DoTuoi": 16,
+      "ThoiLuong": 100,
+      "PosterURL": "https://example.com/posters/nuhonbacty.jpg",
+      "DaoDien": "Thu Trang",
+      "DienVien": "Lê Xuân Tiền, Tiến Luật, Ma Ran Đô"
+    },
+    "P004": {
+      "TenPhim": "Yêu nhầm bạn thân",
+      "TheLoai": "Hài, Lãng mạn",
+      "MoTa": "Tình huống trớ trêu khi ranh giới tình bạn bị phá vỡ.",
+      "DoTuoi": 16,
+      "ThoiLuong": 106,
+      "PosterURL": "https://example.com/posters/yeunhambanthan.jpg",
+      "DaoDien": "Nguyễn Quang Dũng, Diệp Thế Vinh",
+      "DienVien": "Kaity Nguyễn, Trần Ngọc Vàng, Thanh Sơn"
+    },
+    "P005": {
+      "TenPhim": "Wolf Man",
+      "TheLoai": "Kinh dị",
+      "MoTa": "Nỗi kinh hoàng trỗi dậy từ bóng tối của người sói.",
+      "DoTuoi": 18,
+      "ThoiLuong": 103,
+      "PosterURL": "https://example.com/posters/wolfman.jpg",
+      "DaoDien": "Leigh Whannell",
+      "DienVien": "Christopher Abbott, Julia Garner"
+    },
+    "P006": {
+      "TenPhim": "Đèn âm hồn",
+      "TheLoai": "Kinh dị, Tâm linh",
+      "MoTa": "Bí ẩn xoay quanh chiếc đèn cổ mang lời nguyền.",
+      "DoTuoi": 18,
+      "ThoiLuong": 101,
+      "PosterURL": "https://example.com/posters/denamhon.jpg",
+      "DaoDien": "Hoàng Nam",
+      "DienVien": "Diễm Trang, Hoàng Kim Ngọc, Phú Thịnh"
+    },
+    "P007": {
+      "TenPhim": "Trái Tim Què Quặt",
+      "TheLoai": "Tâm lý, Kịch tính",
+      "MoTa": "Sự giằng xé nội tâm của những con người ở tận cùng xã hội.",
+      "DoTuoi": 18,
+      "ThoiLuong": 102,
+      "PosterURL": "https://example.com/posters/traitimquequat.jpg",
+      "DaoDien": "Chưa cập nhật",
+      "DienVien": "Quách Ngọc Ngoan, Xuân Văn, Nhật Linh"
+    },
+    "P008": {
+      "TenPhim": "Truy Tìm Long Diên Hương",
+      "TheLoai": "Hài",
+      "MoTa": "Hành trình dở khóc dở cười truy tìm báu vật.",
+      "DoTuoi": 13,
+      "ThoiLuong": 103,
+      "PosterURL": "https://example.com/posters/truytimlongdienhuong.jpg",
+      "DaoDien": "Chưa cập nhật",
+      "DienVien": "Quang Tuấn, Ma Ran Đô, Nguyên Thảo"
+    },
+    "P009": {
+      "TenPhim": "Phòng Trọ Ma Bầu",
+      "TheLoai": "Hài, Kinh dị",
+      "MoTa": "Những hiện tượng kỳ bí tại một khu trọ sinh viên.",
+      "DoTuoi": 16,
+      "ThoiLuong": 101,
+      "PosterURL": "https://example.com/posters/phongtromabau.jpg",
+      "DaoDien": "Chưa cập nhật",
+      "DienVien": "Huỳnh Phương, Anh Tú, Phương Lan"
+    },
+    "P010": {
+      "TenPhim": "Chị Ngã Em Nâng",
+      "TheLoai": "Gia đình, Hài, Tâm Lý",
+      "MoTa": "Tình chị em vượt qua mọi sóng gió cuộc đời.",
+      "DoTuoi": 13,
+      "ThoiLuong": 122,
+      "PosterURL": "https://example.com/posters/chingaemnang.jpg",
+      "DaoDien": "Chưa cập nhật",
+      "DienVien": "Lê Khánh, Quốc Trường, Thuận Nguyễn"
+    }
+  },
+  "Rap": {
+    "R001": {
+      "TenRap": "CineStar Đà Lạt",
+      "DiaChi": "Quảng trường Lâm Viên, Phường 10, TP. Đà Lạt, Lâm Đồng",
+      "SDT": "19000085",
+      "URL": "https://cinestar.com.vn/cinestar-dalat"
+    },
+    "R002": {
+      "TenRap": "CineStar Đức Trọng",
+      "DiaChi": "Đức Trọng, Tỉnh Lâm Đồng",
+      "SDT": "19000085",
+      "URL": "https://cinestar.com.vn/cinestar-ductrong"
+    },
+    "R003": {
+      "TenRap": "Starlight Bảo Lộc",
+      "DiaChi": "Số 729 Trần Phú, Phường B'Lao, TP. Bảo Lộc, Lâm Đồng",
+      "SDT": "19001722",
+      "URL": "https://starlight.vn/baoloc"
+    },
+    "R004": {
+      "TenRap": "Lotte Cinema Bảo Lộc",
+      "DiaChi": "Tầng 1 TTTM Vincom, Bảo Lộc, Lâm Đồng",
+      "SDT": "02837752524",
+      "URL": "https://lottecinemavn.com/baoloc"
+    },
+    "R005": {
+      "TenRap": "Rạp Hòa Bình 3/4",
+      "DiaChi": "Khu Hòa Bình, Phường 1, TP. Đà Lạt, Lâm Đồng",
+      "SDT": "02633821034",
+      "URL": "https://example.com/hoabinh"
+    },
+    "R006": {
+      "TenRap": "CineStar Quốc Thanh",
+      "DiaChi": "271 Nguyễn Trãi, Phường Nguyễn Cư Trinh, Quận 1, TP.HCM",
+      "SDT": "19000085",
+      "URL": "https://cinestar.com.vn/quocthanh"
+    },
+    "R007": {
+      "TenRap": "CineStar Satra Quận 6",
+      "DiaChi": "1466 Võ Văn Kiệt, Phường 3, Quận 6, TP.HCM",
+      "SDT": "19000085",
+      "URL": "https://cinestar.com.vn/satra"
+    },
+    "R008": {
+      "TenRap": "Mega GS Cao Thắng",
+      "DiaChi": "Lầu 6-7, 19 Cao Thắng, Phường 2, Quận 3, TP.HCM",
+      "SDT": "02862649911",
+      "URL": "https://megagscinemas.vn"
+    },
+    "R009": {
+      "TenRap": "CGV Giga Mall Thủ Đức",
+      "DiaChi": "Tầng 6 TTTM GIGAMALL, 240-242 Phạm Văn Đồng, TP. Thủ Đức",
+      "SDT": "19001530",
+      "URL": "https://cgv.vn/gigamall"
+    },
+    "R010": {
+      "TenRap": "Lotte Cinema Nowzone",
+      "DiaChi": "Tầng 5, TTTM Nowzone, 235 Nguyễn Văn Cừ, Quận 1, TP.HCM",
+      "SDT": "02839256123",
+      "URL": "https://lottecinemavn.com/nowzone"
+    }
+  },
+  "PhongChieu": {
+    "PC001": {
+      "TenPhong": "Phòng 01 - 2D",
+      "TongSoGhe": 120,
+      "MaRap": "R001"
+    },
+    "PC002": {
+      "TenPhong": "Phòng 02 - 3D",
+      "TongSoGhe": 100,
+      "MaRap": "R001"
+    },
+    "PC003": {
+      "TenPhong": "Phòng VIP - L'amour",
+      "TongSoGhe": 30,
+      "MaRap": "R001"
+    },
+    "PC004": {
+      "TenPhong": "Phòng 01 - Standard",
+      "TongSoGhe": 150,
+      "MaRap": "R002"
+    },
+    "PC005": {
+      "TenPhong": "Phòng 02 - Sweetbox",
+      "TongSoGhe": 80,
+      "MaRap": "R002"
+    },
+    "PC006": {
+      "TenPhong": "Cinema 1",
+      "TongSoGhe": 110,
+      "MaRap": "R003"
+    },
+    "PC007": {
+      "TenPhong": "Cinema 2",
+      "TongSoGhe": 110,
+      "MaRap": "R003"
+    },
+    "PC008": {
+      "TenPhong": "Lotte Room 1",
+      "TongSoGhe": 130,
+      "MaRap": "R004"
+    },
+    "PC009": {
+      "TenPhong": "GS Room A",
+      "TongSoGhe": 160,
+      "MaRap": "R008"
+    },
+    "PC010": {
+      "TenPhong": "IMAX Theater",
+      "TongSoGhe": 250,
+      "MaRap": "R009"
+    }
+  },
+  "Ghe": {
+    "G001": {
+      "MaPhong": "PC001",
+      "LoaiGhe": "Ghế đơn"
+    },
+    "G002": {
+      "MaPhong": "PC001",
+      "LoaiGhe": "Ghế đơn"
+    },
+    "G003": {
+      "MaPhong": "PC001",
+      "LoaiGhe": "Ghế đơn"
+    },
+    "G004": {
+      "MaPhong": "PC001",
+      "LoaiGhe": "Ghế đơn"
+    },
+    "G005": {
+      "MaPhong": "PC001",
+      "LoaiGhe": "Ghế VIP"
+    },
+    "G006": {
+      "MaPhong": "PC001",
+      "LoaiGhe": "Ghế VIP"
+    },
+    "G007": {
+      "MaPhong": "PC005",
+      "LoaiGhe": "Ghế đôi"
+    },
+    "G008": {
+      "MaPhong": "PC005",
+      "LoaiGhe": "Ghế đôi"
+    },
+    "G009": {
+      "MaPhong": "PC005",
+      "LoaiGhe": "Ghế đôi"
+    },
+    "G010": {
+      "MaPhong": "PC009",
+      "LoaiGhe": "Ghế đơn"
+    }
+  },
+  "SuatChieu": {
+    "SC001": {
+      "MaPhim": "P001",
+      "MaPhong": "PC001",
+      "NgayChieu": "2025-10-15",
+      "GioBD": "18:00",
+      "GiaVe": 45000
+    },
+    "SC002": {
+      "MaPhim": "P001",
+      "MaPhong": "PC001",
+      "NgayChieu": "2025-10-15",
+      "GioBD": "21:00",
+      "GiaVe": 45000
+    },
+    "SC003": {
+      "MaPhim": "P002",
+      "MaPhong": "PC002",
+      "NgayChieu": "2025-10-15",
+      "GioBD": "19:30",
+      "GiaVe": 50000
+    },
+    "SC004": {
+      "MaPhim": "P003",
+      "MaPhong": "PC003",
+      "NgayChieu": "2025-10-16",
+      "GioBD": "17:00",
+      "GiaVe": 200000
+    },
+    "SC005": {
+      "MaPhim": "P004",
+      "MaPhong": "PC004",
+      "NgayChieu": "2025-10-16",
+      "GioBD": "20:15",
+      "GiaVe": 45000
+    },
+    "SC006": {
+      "MaPhim": "P005",
+      "MaPhong": "PC005",
+      "NgayChieu": "2025-10-17",
+      "GioBD": "22:30",
+      "GiaVe": 120000
+    },
+    "SC007": {
+      "MaPhim": "P006",
+      "MaPhong": "PC006",
+      "NgayChieu": "2025-10-17",
+      "GioBD": "18:45",
+      "GiaVe": 45000
+    },
+    "SC008": {
+      "MaPhim": "P007",
+      "MaPhong": "PC007",
+      "NgayChieu": "2025-10-18",
+      "GioBD": "19:00",
+      "GiaVe": 45000
+    },
+    "SC009": {
+      "MaPhim": "P008",
+      "MaPhong": "PC008",
+      "NgayChieu": "2025-10-18",
+      "GioBD": "14:20",
+      "GiaVe": 45000
+    },
+    "SC010": {
+      "MaPhim": "P009",
+      "MaPhong": "PC009",
+      "NgayChieu": "2025-10-19",
+      "GioBD": "20:00",
+      "GiaVe": 45000
+    }
+  },
+  "TrangThaiGhe": {
+    "TTG001": {
+      "MaSuat": "SC001",
+      "MaGhe": "G001",
+      "TinhTrang": "Đã bán"
+    },
+    "TTG002": {
+      "MaSuat": "SC001",
+      "MaGhe": "G002",
+      "TinhTrang": "Đã bán"
+    },
+    "TTG003": {
+      "MaSuat": "SC001",
+      "MaGhe": "G003",
+      "TinhTrang": "Trống"
+    },
+    "TTG004": {
+      "MaSuat": "SC001",
+      "MaGhe": "G004",
+      "TinhTrang": "Đang chọn"
+    },
+    "TTG005": {
+      "MaSuat": "SC001",
+      "MaGhe": "G005",
+      "TinhTrang": "Đã bán"
+    },
+    "TTG006": {
+      "MaSuat": "SC002",
+      "MaGhe": "G001",
+      "TinhTrang": "Trống"
+    },
+    "TTG007": {
+      "MaSuat": "SC006",
+      "MaGhe": "G007",
+      "TinhTrang": "Đã bán"
+    },
+    "TTG008": {
+      "MaSuat": "SC006",
+      "MaGhe": "G008",
+      "TinhTrang": "Trống"
+    },
+    "TTG009": {
+      "MaSuat": "SC006",
+      "MaGhe": "G009",
+      "TinhTrang": "Đang chọn"
+    },
+    "TTG010": {
+      "MaSuat": "SC010",
+      "MaGhe": "G010",
+      "TinhTrang": "Đã bán"
+    }
+  },
+  "HoaDon": {
+    "HD001": {
+      "MaND": "ND001",
+      "NgayLap": "2025-10-14T10:15:00Z",
+      "TongTien": 90000,
+      "PhuongThucTT": "MoMo",
+      "TrangThaiTT": "Đã thanh toán"
+    },
+    "HD002": {
+      "MaND": "ND002",
+      "NgayLap": "2025-10-14T11:20:00Z",
+      "TongTien": 200000,
+      "PhuongThucTT": "ZaloPay",
+      "TrangThaiTT": "Đã thanh toán"
+    },
+    "HD003": {
+      "MaND": "ND003",
+      "NgayLap": "2025-10-15T09:00:00Z",
+      "TongTien": 120000,
+      "PhuongThucTT": "VNPay",
+      "TrangThaiTT": "Chờ thanh toán"
+    },
+    "HD004": {
+      "MaND": "ND004",
+      "NgayLap": "2025-10-15T14:30:00Z",
+      "TongTien": 135000,
+      "PhuongThucTT": "Thẻ Tín Dụng",
+      "TrangThaiTT": "Đã thanh toán"
+    },
+    "HD005": {
+      "MaND": "ND005",
+      "NgayLap": "2025-10-16T15:45:00Z",
+      "TongTien": 240000,
+      "PhuongThucTT": "MoMo",
+      "TrangThaiTT": "Thất bại"
+    },
+    "HD006": {
+      "MaND": "ND006",
+      "NgayLap": "2025-10-16T18:00:00Z",
+      "TongTien": 45000,
+      "PhuongThucTT": "Tiền mặt",
+      "TrangThaiTT": "Đã thanh toán"
+    },
+    "HD007": {
+      "MaND": "ND007",
+      "NgayLap": "2025-10-17T12:10:00Z",
+      "TongTien": 90000,
+      "PhuongThucTT": "ZaloPay",
+      "TrangThaiTT": "Đã thanh toán"
+    },
+    "HD008": {
+      "MaND": "ND008",
+      "NgayLap": "2025-10-17T13:25:00Z",
+      "TongTien": 200000,
+      "PhuongThucTT": "MoMo",
+      "TrangThaiTT": "Chờ thanh toán"
+    },
+    "HD009": {
+      "MaND": "ND009",
+      "NgayLap": "2025-10-18T10:05:00Z",
+      "TongTien": 120000,
+      "PhuongThucTT": "VNPay",
+      "TrangThaiTT": "Đã thanh toán"
+    },
+    "HD010": {
+      "MaND": "ND010",
+      "NgayLap": "2025-10-18T19:50:00Z",
+      "TongTien": 45000,
+      "PhuongThucTT": "Thẻ Ghi Nợ",
+      "TrangThaiTT": "Đã thanh toán"
+    }
+  },
+  "ChiTietVe": {
+    "CTV001": {
+      "MaSuat": "SC001",
+      "MaGhe": "G001",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD001"
+    },
+    "CTV002": {
+      "MaSuat": "SC001",
+      "MaGhe": "G002",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD001"
+    },
+    "CTV003": {
+      "MaSuat": "SC001",
+      "MaGhe": "G005",
+      "GiaVeThucTe": 200000,
+      "MaHD": "HD002"
+    },
+    "CTV004": {
+      "MaSuat": "SC006",
+      "MaGhe": "G007",
+      "GiaVeThucTe": 120000,
+      "MaHD": "HD003"
+    },
+    "CTV005": {
+      "MaSuat": "SC005",
+      "MaGhe": "G003",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD004"
+    },
+    "CTV006": {
+      "MaSuat": "SC005",
+      "MaGhe": "G004",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD004"
+    },
+    "CTV007": {
+      "MaSuat": "SC008",
+      "MaGhe": "G006",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD004"
+    },
+    "CTV008": {
+      "MaSuat": "SC010",
+      "MaGhe": "G010",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD006"
+    },
+    "CTV009": {
+      "MaSuat": "SC007",
+      "MaGhe": "G008",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD007"
+    },
+    "CTV010": {
+      "MaSuat": "SC007",
+      "MaGhe": "G009",
+      "GiaVeThucTe": 45000,
+      "MaHD": "HD007"
+    }
+  }
+}

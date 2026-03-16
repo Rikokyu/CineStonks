@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "257267310548",
+    "firebase_url": "https://cinestonks-16fc4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cinestonks-16fc4",
+    "storage_bucket": "cinestonks-16fc4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257267310548:android:4921add213918981e88041",
+        "android_client_info": {
+          "package_name": "com.example.cinestonks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgSgwBFr9hiwjAIIz_IzNcwrOi1B0iwEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
