@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/suat_chieu"
+    android:orientation="vertical">
+    <include
+        android:id="@+id/action_bar_up"
+        layout="@layout/actionbar_up"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <include
+        android:id="@+id/action_bar_up"
+        layout="@layout/horizontal_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <include
+        android:id="@+id/item_suat_chieu"
+        layout="@layout/item_suat_chieu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</LinearLayout>

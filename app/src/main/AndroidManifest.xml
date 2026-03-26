@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CineStonks">
+        <activity android:name=".ActionBar"></activity>
+        <activity android:name=".HorizontalCalendar"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".HoaDon"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".SuatChieu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,5 +25,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
