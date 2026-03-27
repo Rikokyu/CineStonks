@@ -1,6 +1,7 @@
 package com.example.cinestonks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -12,13 +13,14 @@ import java.util.List;
 public class ActionBar extends AppCompatActivity {
     private final List<ImageView> icons = new ArrayList<>();
     private final Context context;
+    ImageView ivHome, ivTickets, ivAccount;
 
     public ActionBar(Context context, View root) {
         this.context = context;
         
-        ImageView ivHome = root.findViewById(R.id.iv_home);
-        ImageView ivTickets = root.findViewById(R.id.iv_buy_tickets);
-        ImageView ivAccount = root.findViewById(R.id.iv_account);
+        ivHome = root.findViewById(R.id.iv_home);
+        ivTickets = root.findViewById(R.id.iv_buy_tickets);
+        ivAccount = root.findViewById(R.id.iv_account);
 
         if (ivHome != null) icons.add(ivHome);
         if (ivTickets != null) icons.add(ivTickets);
@@ -31,6 +33,14 @@ public class ActionBar extends AppCompatActivity {
         if (ivHome != null) {
             selectIcon(ivHome);
         }
+
+        ivTickets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ChuyenRap.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     private void selectIcon(ImageView selectedIcon) {
