@@ -1,6 +1,8 @@
 package com.example.cinestonks;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,9 +20,11 @@ import java.util.List;
 
 public class ChuyenRap extends AppCompatActivity {
     // Không cần tvName, tvAddress ở đây nữa vì nó nằm trong từng Item của Adapter
-    private RecyclerView rvRap;
+    private RecyclerView rvRap; //B1
     private CinemaAdapter adapter;
     private List<Rap> mListRap;
+
+    private ImageView iv_back;
 
     TextView con;
 
@@ -31,7 +35,20 @@ public class ChuyenRap extends AppCompatActivity {
         setContentView(R.layout.list_cinema);
         initView();
         loadData();
+        BackToPrevious();
     }
+
+    public void BackToPrevious()
+    {
+        iv_back = findViewById(R.id.iv_back);
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
 
     private void initView() {
         rvRap = findViewById(R.id.rv_rap); // ID này phải trùng với ID trong XML
@@ -52,6 +69,9 @@ public class ChuyenRap extends AppCompatActivity {
                     for (DataSnapshot data : snapshot.getChildren()) {
                         Rap rap = data.getValue(Rap.class);
                         if (rap != null) {
+                            // QUAN TRỌNG: Lấy Key (ví dụ R001, R002) gán vào biến ID của đối tượng
+                            rap.setId(data.getKey());
+
                             mListRap.add(rap);
                         }
                     }

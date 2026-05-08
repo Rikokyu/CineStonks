@@ -7,9 +7,10 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import java.util.ArrayList;
 import java.util.List;
-
 public class ActionBar extends AppCompatActivity {
     private final List<ImageView> icons = new ArrayList<>();
     private final Context context;
@@ -17,7 +18,7 @@ public class ActionBar extends AppCompatActivity {
 
     public ActionBar(Context context, View root) {
         this.context = context;
-        
+
         ivHome = root.findViewById(R.id.iv_home);
         ivTickets = root.findViewById(R.id.iv_buy_tickets);
         ivAccount = root.findViewById(R.id.iv_account);
@@ -41,7 +42,16 @@ public class ActionBar extends AppCompatActivity {
                 context.startActivity(intent);
             }
         });
+
+        ivAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, chuyen_account.class);
+                context.startActivity(intent);
+            }
+        });
     }
+
 
     private void selectIcon(ImageView selectedIcon) {
         for (ImageView icon : icons) {
