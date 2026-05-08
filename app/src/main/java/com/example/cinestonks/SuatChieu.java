@@ -1,6 +1,10 @@
 package com.example.cinestonks;
 
 public class SuatChieu {
+    public void setMaSuat(String maSuat) {
+        MaSuat = maSuat;
+    }
+
     private String MaSuat, NgayChieu, GioChieu, MaPhim, MaPhong;
 
     public SuatChieu() {}

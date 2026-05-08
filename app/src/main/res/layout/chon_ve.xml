@@ -23,11 +23,11 @@
         android:padding="9dp"/>
 
     <TextView
-        android:id="@+id/titleFilm"
+        android:id="@+id/tv_ten_rap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="8dp"
-        android:text="TÊN PHIM"
+        android:text="TÊN RẠP"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -45,24 +45,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:id="@+id/txtTags"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#E3F2FD"
-                    android:padding="4dp"
-                    android:text="Thể loại phim"
-                    android:textColor="#1E88E5"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,7 +67,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtMovieName"
+                        android:id="@+id/tv_ten_phim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TÊN PHIM CHI TIẾT"
@@ -94,7 +76,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtCinema"
+                        android:id="@+id/tv_TheLoai"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -104,12 +86,12 @@
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/txtFullShowtime"
+                        android:id="@+id/tv_suat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:drawablePadding="8dp"
-                        android:text="Giờ chiếu - Ngày"
+                        android:text="Giờ chiếu"
                         android:textColor="#666"
                         android:textSize="13sp" />
                 </LinearLayout>

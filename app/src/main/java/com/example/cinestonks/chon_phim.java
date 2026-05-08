@@ -91,23 +91,20 @@ public class chon_phim extends AppCompatActivity {
                 suatChieuMap.clear();
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-
-                    // ✅ ĐÚNG MODEL
                     SuatChieu sc = dataSnapshot.getValue(SuatChieu.class);
                     if (sc == null) continue;
+
+                    sc.setMaSuat(dataSnapshot.getKey());
 
                     String maPhim = sc.getMaPhim();
 
                     if (maPhim == null) continue;
 
-                    // tạo list nếu chưa có
                     if (!suatChieuMap.containsKey(maPhim)) {
                         suatChieuMap.put(maPhim, new ArrayList<>());
                     }
-
                     suatChieuMap.get(maPhim).add(sc);
                 }
-
                 movieAdapter.notifyDataSetChanged();
             }
 
