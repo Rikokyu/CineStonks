@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,12 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CineStonks">
-        <activity android:name=".ActionBar"></activity>
-        <activity android:name=".HorizontalCalendar"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".HoaDon"></activity>
+
+        <activity android:name=".ChuyenRap" />
+
         <activity
-            android:name=".SuatChieu"
+            android:name=".chon_phim"
+            android:exported="false" />
+
+        <activity
+            android:name=".chon_ve"
+            android:exported="false" />
+        <activity
+            android:name=".chon_ghe"
+            android:exported="false" />
+
+        <activity android:name=".ActionBar"></activity>
+
+        <activity
+            android:name=".chuyen_account"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

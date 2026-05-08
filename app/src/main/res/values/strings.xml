@@ -1,18 +1,3 @@
 <resources>
     <string name="app_name">CineStonks</string>
-    <string name="today">Hôm nay</string>
-    <string name="duration">Thời lượng: </string>
-    <string name="seat">Ghế: </string>
-    <string name="ticket_info">THÔNG TIN VÉ</string>
-    <string name="snack_info">THÔNG TIN BẮP NƯỚC</string>
-    <string name="pay">THANH TOÁN</string>
-    <string name="sum">Tổng</string>
-    <string name="all_sum">Tổng cộng</string>
-    <string name="discount">Giảm giá</string>
-    <string name="change">Còn lại</string>
-    <string name="quantity">SỐ LƯỢNG</string>
-    <string name="bidv">BIDV (SmartBanking)</string>
-    <string name="vcb">VCB Digibank</string>
-    <string name="momo">MoMo</string>
-
 </resources>
