@@ -4,6 +4,16 @@ public class Ve {
     private String MaVe, TenVe;
     private int GiaTien;
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    private int quantity = 0;
+
     public String getMaVe() {
         return MaVe;
     }

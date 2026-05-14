@@ -23,7 +23,6 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateViewHolder
     @NonNull
     @Override
     public DateViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // KIỂM TRA: Nếu file XML của bạn là item_day.xml thì để R.layout.item_day
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_date, parent, false);
         return new DateViewHolder(view);
     }
@@ -41,8 +40,6 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateViewHolder
             holder.tvDateValue.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), android.R.color.black));
         } else {
             holder.layoutDate.setBackgroundResource(R.drawable.bg_date_unselected);
-            // Để giống hình mẫu (chữ màu vàng trên nền tím), bạn có thể đổi android.R.color.white
-            // thành một mã màu vàng như #FFEB3B nếu muốn
             holder.tvDayOfWeek.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), android.R.color.white));
             holder.tvDateValue.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), android.R.color.white));
         }

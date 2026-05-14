@@ -29,7 +29,7 @@ public class chon_ve extends AppCompatActivity {
 
     // Đổi tên biến để tránh nhầm lẫn với TextView
     private String maRap, maPhim, maSuat;
-    private TextView tv_rap, tv_phim, tv_theloai, tv_suat;
+    private TextView tv_rap, tv_phim, tv_theloai, tv_suat, tvCountTicket, tvTotalMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,13 +118,27 @@ public class chon_ve extends AppCompatActivity {
         tv_theloai = findViewById(R.id.tv_TheLoai);
         tv_suat = findViewById(R.id.tv_suat);
         rvTicket = findViewById(R.id.rvTicketTypes);
+        tvCountTicket = findViewById(R.id.tvTotalCount);
+        tvTotalMoney = findViewById(R.id.tvTotalMoney);
 
         veList = new ArrayList<>();
-        veAdapter = new VeAdapter(veList);
+        veAdapter = new VeAdapter(veList, new VeAdapter.OnQuantityChangeListener() {
+            @Override
+            public void onQuantityChanged() {
+                updateTotal();
+            }
+        });
 
         rvTicket.setLayoutManager(new LinearLayoutManager(this));
         rvTicket.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rvTicket.setAdapter(veAdapter);
+    }
+    private void updateTotal() {
+        long totalMoney = veAdapter.getTotalPrice();
+        int totalCount = veAdapter.getTotalTickets();
+
+        tvTotalMoney.setText(String.format("%,d VNĐ", totalMoney));
+        tvCountTicket.setText(String.valueOf(totalCount));
     }
 
     private void getTicket() {

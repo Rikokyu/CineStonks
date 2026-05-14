@@ -31,7 +31,6 @@ public class ChuyenRap extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // LƯU Ý: Layout này phải chứa RecyclerView (ví dụ: activity_main hoặc activity_chuyen_rap)
         setContentView(R.layout.list_cinema);
         initView();
         loadData();
