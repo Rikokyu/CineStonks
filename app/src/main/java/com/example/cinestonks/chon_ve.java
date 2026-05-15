@@ -1,6 +1,5 @@
 package com.example.cinestonks;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,13 +23,13 @@ import java.util.List;
 
 public class chon_ve extends AppCompatActivity {
     private RecyclerView rvTicket;
-    private ImageView iv_back, iv_next;
+    private ImageView iv_back;
     private List<Ve> veList;
     private VeAdapter veAdapter;
 
     // Đổi tên biến để tránh nhầm lẫn với TextView
     private String maRap, maPhim, maSuat;
-    private TextView tv_rap, tv_phim, tv_theloai, tv_suat;
+    private TextView tv_rap, tv_phim, tv_theloai, tv_suat, tvCountTicket, tvTotalMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +44,6 @@ public class chon_ve extends AppCompatActivity {
         getTicket();
         getTen();
         BackToPrevious();
-        iv_next.setOnClickListener(v -> {
-            Intent intent = new Intent(chon_ve.this, chon_ghe.class);
-        });
     }
 
     public void BackToPrevious() {
@@ -122,16 +118,27 @@ public class chon_ve extends AppCompatActivity {
         tv_theloai = findViewById(R.id.tv_TheLoai);
         tv_suat = findViewById(R.id.tv_suat);
         rvTicket = findViewById(R.id.rvTicketTypes);
-        iv_next = findViewById(R.id.iv_next);
-        iv_back = findViewById(R.id.iv_back);
-
+        tvCountTicket = findViewById(R.id.tvTotalCount);
+        tvTotalMoney = findViewById(R.id.tvTotalMoney);
 
         veList = new ArrayList<>();
-        veAdapter = new VeAdapter(veList);
+        veAdapter = new VeAdapter(veList, new VeAdapter.OnQuantityChangeListener() {
+            @Override
+            public void onQuantityChanged() {
+                updateTotal();
+            }
+        });
 
         rvTicket.setLayoutManager(new LinearLayoutManager(this));
         rvTicket.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rvTicket.setAdapter(veAdapter);
+    }
+    private void updateTotal() {
+        long totalMoney = veAdapter.getTotalPrice();
+        int totalCount = veAdapter.getTotalTickets();
+
+        tvTotalMoney.setText(String.format("%,d VNĐ", totalMoney));
+        tvCountTicket.setText(String.valueOf(totalCount));
     }
 
     private void getTicket() {

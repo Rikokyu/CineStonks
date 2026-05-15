@@ -26,7 +26,6 @@ public class chon_suat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_film);
-
     }
 
     public void init(){

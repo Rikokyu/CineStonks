@@ -23,14 +23,17 @@
         <activity
             android:name=".chon_ve"
             android:exported="false" />
+
         <activity
-            android:name=".chon_ghe"
-            android:exported="false" />
+            android:name=".DangKy"
+            android:windowSoftInputMode="stateUnchanged">
+        </activity>
 
         <activity android:name=".ActionBar"></activity>
 
         <activity
             android:name=".chuyen_account"
+            android:windowSoftInputMode="stateUnchanged"
             android:exported="false" />
 
         <activity
