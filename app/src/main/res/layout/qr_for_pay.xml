@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<ImageView
+    android:id="@+id/iv_qr_for_pay"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:layout_gravity="center" />
+    <TextView
+        android:id="@+id/tv_all_costs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/btn_all_costs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pay"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_unselected_date"
+        app:backgroundTint="@color/yellow"
+        />
+</LinearLayout>
