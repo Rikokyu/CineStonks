@@ -1,11 +1,12 @@
-package com.example.cinestonks;
+package com.example.cinestonks; // Đảm bảo đúng package của bạn
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,25 +25,30 @@ import java.util.Map;
 
 public class DangKy extends AppCompatActivity {
     private ImageView iv_back;
-    private TextInputEditText etFullName, etPhone, etEmail, etUsername, etPassword, etConfirmPassword;
+    private TextInputEditText etHoTen, etSDT, etEmail, etNgaySinh, etMatKhau, etConfirmPassword;
+    private RadioGroup rgGioiTinh;
     private Button btnRegister;
     private TextView tvLogin;
-
+    String gioiTinh = "Nam"; // Mặc định
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.register); // Đảm bảo file XML này đã có RadioGroup và ID đúng
+
         initControl();
-        BackToPrevious();
+        backToPrevious();
     }
 
     private void initControl() {
-        etFullName = findViewById(R.id.etFullName);
-        etPhone = findViewById(R.id.etPhone);
+        // Ánh xạ View đúng theo cấu trúc CSDL TaiKhoan
+        etHoTen = findViewById(R.id.etFullName); // ID trong XML có thể giữ nguyên nhưng biến nên đổi cho dễ nhớ
+        etSDT = findViewById(R.id.etPhone);
         etEmail = findViewById(R.id.etEmail);
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
+        etNgaySinh = findViewById(R.id.etNgaySinh); // Bạn nên đổi ID XML này thành etNgaySinh cho đúng nghĩa
+        etMatKhau = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
+        rgGioiTinh = findViewById(R.id.rgGioiTinh); // Cần thêm vào XML
+
         btnRegister = findViewById(R.id.btnRegister);
         tvLogin = findViewById(R.id.tvLogin);
 
@@ -56,15 +62,24 @@ public class DangKy extends AppCompatActivity {
     }
 
     private void registerUser() {
-        String fullName = etFullName.getText().toString().trim();
-        String phone = etPhone.getText().toString().trim();
+        String fullName = etHoTen.getText().toString().trim();
+        String phone = etSDT.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
+        String ngaySinh = etNgaySinh.getText().toString().trim();
+        String password = etMatKhau.getText().toString().trim();
         String confirmPassword = etConfirmPassword.getText().toString().trim();
+
+        // Lấy giới tính từ RadioGroup
+        int selectedId = rgGioiTinh.getCheckedRadioButtonId();
+
+        if (selectedId != -1) {
+            RadioButton rbSelected = findViewById(selectedId);
+            gioiTinh = rbSelected.getText().toString();
+        }
 
         // Kiểm tra dữ liệu trống
         if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(email)
-                || TextUtils.isEmpty(password)) {
+                || TextUtils.isEmpty(ngaySinh) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -75,30 +90,27 @@ public class DangKy extends AppCompatActivity {
             return;
         }
 
-        // 1. Đổi node gốc thành "TaiKhoan" theo hình image_931c18.png
+        // Kết nối tới node "TaiKhoan"
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("TaiKhoan");
 
-        // 2. Kiểm tra xem Email đã tồn tại chưa (Vì CSDL của bạn dùng Email)
+        // Kiểm tra Email trùng lặp
         usersRef.orderByChild("Email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     etEmail.setError("Email này đã được đăng ký");
                 } else {
-                    // Tạo ID mới (Ví dụ: ND001, ND002... hoặc dùng push key)
-                    // Ở đây dùng push().getKey() để đảm bảo không trùng lặp
+                    // Tạo ID tự động (ND001, ...) hoặc dùng push().getKey()
                     String userId = usersRef.push().getKey();
 
-                    // 3. Sửa lại Map để khớp chính xác với các trường trong hình
+                    // Map dữ liệu khớp 100% với hình image_931c18.png
                     Map<String, Object> userMap = new HashMap<>();
-                    userMap.put("HoTen", fullName);     // Thay cho fullName
-                    userMap.put("SDT", phone);         // Thay cho phone
-                    userMap.put("Email", email);       // Giữ nguyên hoặc viết hoa chữ E
-                    userMap.put("MatKhau", password);   // Thay cho password
-
-                    // Các trường bổ sung có trong hình image_931c18.png
-                    userMap.put("GioiTinh", "Chưa xác định");
-                    userMap.put("NgaySinh", "1990-01-01");
+                    userMap.put("HoTen", fullName);
+                    userMap.put("SDT", phone);
+                    userMap.put("Email", email);
+                    userMap.put("MatKhau", password);
+                    userMap.put("GioiTinh", gioiTinh);
+                    userMap.put("NgaySinh", ngaySinh);
                     userMap.put("TrangThai", "Active");
 
                     if (userId != null) {
@@ -123,7 +135,7 @@ public class DangKy extends AppCompatActivity {
         });
     }
 
-    public void BackToPrevious() {
+    public void backToPrevious() {
         iv_back = findViewById(R.id.iv_back);
         if (iv_back != null) {
             iv_back.setOnClickListener(v -> finish());
