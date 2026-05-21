@@ -81,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:drawablePadding="8dp"
-                        android:text="Tên rạp chiếu"
+                        android:text="Thể loại phim"
                         android:textColor="#666"
                         android:textSize="13sp" />
 

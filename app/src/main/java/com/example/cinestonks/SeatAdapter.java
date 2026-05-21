@@ -15,14 +15,14 @@ import java.util.List;
 
 public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder> {
 
-    private List<Seat> seatList;
+    private List<Phong.Ghe> seatList;
     private OnSeatClickListener listener;
 
     public interface OnSeatClickListener {
         void onSeatClick(int position);
     }
 
-    public SeatAdapter(List<Seat> seatList, OnSeatClickListener listener) {
+    public SeatAdapter(List<Phong.Ghe> seatList, OnSeatClickListener listener) {
         this.seatList = seatList;
         this.listener = listener;
     }
@@ -36,20 +36,20 @@ public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull SeatViewHolder holder, int position) {
-        Seat seat = seatList.get(position);
-        holder.tvSeatName.setText(seat.getName());
+        Phong.Ghe seat = seatList.get(position);
+        holder.tvSeatName.setText(seat.getTenGhe());
 
         int bgColor;
         int textColor;
 
-        if (seat.getType() == Seat.TYPE_SOLD) {
+        if (seat.getLoaiGhe() == Phong.Ghe.LOAI_DA_BAN) {
             bgColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.gray);
             holder.tvSeatName.setText(""); // No text for sold seats
             textColor = Color.TRANSPARENT;
-        } else if (seat.isSelected()) {
+        } else if (seat.isDangChon()) {
             bgColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.green);
             textColor = Color.WHITE;
-        } else if (seat.getType() == Seat.TYPE_DOUBLE) {
+        } else if (seat.getLoaiGhe() == Phong.Ghe.LOAI_DOI) {
             bgColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.yellow);
             textColor = Color.BLACK;
         } else {
@@ -61,7 +61,7 @@ public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder
         holder.tvSeatName.setTextColor(textColor);
 
         holder.itemView.setOnClickListener(v -> {
-            if (seat.getType() != Seat.TYPE_SOLD) {
+            if (seat.getLoaiGhe() != Phong.Ghe.LOAI_DA_BAN) {
                 listener.onSeatClick(position);
             }
         });

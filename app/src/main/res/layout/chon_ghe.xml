@@ -20,10 +20,10 @@
             app:tint="@color/white"
             tools:ignore="ContentDescription" />
         <TextView
-            android:id="@+id/tv_display_id"
+            android:id="@+id/tv_rap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tên phim"
+            android:text="Tên rạp"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/white"
@@ -62,24 +62,36 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtCinema"
+                android:id="@+id/tv_TheLoai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:drawablePadding="8dp"
-                android:text="Tên rạp chiếu"
+                android:text="Thể loại phim"
                 android:textColor="#666"
                 android:textSize="13sp" />
 
             <TextView
-                android:id="@+id/txtFullShowtime"
+                android:id="@+id/tv_suat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:drawablePadding="8dp"
-                android:text="Giờ chiếu - Ngày"
+                android:text="Giờ chiếu"
                 android:textColor="#666"
                 android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvTicketName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="8dp"
+                android:text="Loại vé"
+                android:textColor="#666"
+                android:textSize="13sp" />
+
+
         </LinearLayout>
     </LinearLayout>
 
@@ -184,14 +196,24 @@
                     android:text="0 Ghế:"
                     android:textColor="@color/white" />
 
-                <TextView
-                    android:id="@+id/txtTotalAmount"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tổng cộng: 0"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tổng cộng: "
+                        android:textColor="@color/white" />
+                    <TextView
+                        android:id="@+id/tvTotalMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
 
             <ImageView

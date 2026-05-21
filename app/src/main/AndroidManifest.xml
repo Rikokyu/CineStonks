@@ -15,6 +15,7 @@
         android:theme="@style/Theme.CineStonks">
 
         <activity android:name=".ChuyenRap" />
+        <activity android:name=".chon_ghe"/>
 
         <activity
             android:name=".chon_phim"

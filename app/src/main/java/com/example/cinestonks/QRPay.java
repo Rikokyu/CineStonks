@@ -13,13 +13,6 @@ public class QRPay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qr_for_pay);
     }
-    public void initView(){
-        all_costs = findViewById(R.id.tv_all_costs);
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            all_costs.setText(extras.getString("cost"));
-        }
-    }
 
 
 }
