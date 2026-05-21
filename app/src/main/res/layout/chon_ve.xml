@@ -32,7 +32,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         tools:ignore="RtlSymmetry" />
-</LinearLayout>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -84,7 +84,15 @@
                         android:text="Thể loại phim"
                         android:textColor="#666"
                         android:textSize="13sp" />
-
+                    <TextView
+                        android:id="@+id/tv_phong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:drawablePadding="8dp"
+                        android:text="Phòng chiếu"
+                        android:textColor="#666"
+                        android:textSize="13sp" />
                     <TextView
                         android:id="@+id/tv_suat"
                         android:layout_width="wrap_content"
