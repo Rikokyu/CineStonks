@@ -1,11 +1,9 @@
-package com.example.cinestonks;
+package com.example.cinestonks.adapters;
 
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.cinestonks.R;
+import com.example.cinestonks.models.Movie;
+import com.example.cinestonks.models.SuatChieu;
 
 import java.util.ArrayList;
 import java.util.List;

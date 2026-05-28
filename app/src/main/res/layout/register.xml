@@ -195,16 +195,6 @@
                 android:textSize="16sp"
                 app:backgroundTint="@color/green"
                 app:cornerRadius="10dp" />
-
-            <TextView
-                android:id="@+id/tvLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Quên mật khẩu? / Đăng nhập"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:textColor="#333333"/>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

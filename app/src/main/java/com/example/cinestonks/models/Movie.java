@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.models;
 
 import java.util.List;
 

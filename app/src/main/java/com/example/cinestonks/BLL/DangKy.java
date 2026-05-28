@@ -1,18 +1,17 @@
-package com.example.cinestonks; // Đảm bảo đúng package của bạn
+package com.example.cinestonks.BLL;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Intent;import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cinestonks.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,37 +27,29 @@ public class DangKy extends AppCompatActivity {
     private TextInputEditText etHoTen, etSDT, etEmail, etNgaySinh, etMatKhau, etConfirmPassword;
     private RadioGroup rgGioiTinh;
     private Button btnRegister;
-    private TextView tvLogin;
     String gioiTinh = "Nam"; // Mặc định
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register); // Đảm bảo file XML này đã có RadioGroup và ID đúng
+        setContentView(R.layout.register);
 
         initControl();
         backToPrevious();
     }
 
     private void initControl() {
-        // Ánh xạ View đúng theo cấu trúc CSDL TaiKhoan
-        etHoTen = findViewById(R.id.etFullName); // ID trong XML có thể giữ nguyên nhưng biến nên đổi cho dễ nhớ
+        etHoTen = findViewById(R.id.etFullName);
         etSDT = findViewById(R.id.etPhone);
         etEmail = findViewById(R.id.etEmail);
-        etNgaySinh = findViewById(R.id.etNgaySinh); // Bạn nên đổi ID XML này thành etNgaySinh cho đúng nghĩa
+        etNgaySinh = findViewById(R.id.etNgaySinh);
         etMatKhau = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
-        rgGioiTinh = findViewById(R.id.rgGioiTinh); // Cần thêm vào XML
-
+        rgGioiTinh = findViewById(R.id.rgGioiTinh);
         btnRegister = findViewById(R.id.btnRegister);
-        tvLogin = findViewById(R.id.tvLogin);
 
+        // Gán sự kiện click duy nhất để thực hiện kiểm tra và đăng ký
         btnRegister.setOnClickListener(v -> registerUser());
-
-        tvLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(DangKy.this, chuyen_account.class);
-            startActivity(intent);
-            finish();
-        });
     }
 
     private void registerUser() {
@@ -69,41 +60,37 @@ public class DangKy extends AppCompatActivity {
         String password = etMatKhau.getText().toString().trim();
         String confirmPassword = etConfirmPassword.getText().toString().trim();
 
-        // Lấy giới tính từ RadioGroup
         int selectedId = rgGioiTinh.getCheckedRadioButtonId();
-
         if (selectedId != -1) {
             RadioButton rbSelected = findViewById(selectedId);
             gioiTinh = rbSelected.getText().toString();
         }
 
-        // Kiểm tra dữ liệu trống
         if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(email)
                 || TextUtils.isEmpty(ngaySinh) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Kiểm tra mật khẩu khớp
         if (!password.equals(confirmPassword)) {
             etConfirmPassword.setError("Mật khẩu nhập lại không khớp");
             return;
         }
 
-        // Kết nối tới node "TaiKhoan"
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("TaiKhoan");
 
-        // Kiểm tra Email trùng lặp
+        // KIỂM TRA EMAIL ĐÃ TỒN TẠI HAY CHƯA
         usersRef.orderByChild("Email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+                    // THÔNG BÁO NẾU EMAIL ĐÃ TỒN TẠI
                     etEmail.setError("Email này đã được đăng ký");
+                    Toast.makeText(DangKy.this, "Email này đã tồn tại trên hệ thống!", Toast.LENGTH_LONG).show();
                 } else {
-                    // Tạo ID tự động (ND001, ...) hoặc dùng push().getKey()
+                    // TIẾN HÀNH ĐĂNG KÝ NẾU CHƯA CÓ EMAIL
                     String userId = usersRef.push().getKey();
 
-                    // Map dữ liệu khớp 100% với hình image_931c18.png
                     Map<String, Object> userMap = new HashMap<>();
                     userMap.put("HoTen", fullName);
                     userMap.put("SDT", phone);
@@ -130,7 +117,7 @@ public class DangKy extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DangKy.this, "Lỗi hệ thống: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DangKy.this, "Lỗi kết nối: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

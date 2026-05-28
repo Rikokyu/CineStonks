@@ -1,23 +1,26 @@
-package com.example.cinestonks;
+package com.example.cinestonks.BLL;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
+
+import com.example.cinestonks.R;
 
 import java.util.ArrayList;
 import java.util.List;
-public class ActionBar extends AppCompatActivity {
+
+public class ActionBar {
     private final List<ImageView> icons = new ArrayList<>();
     private final Context context;
+    private final String userId;
     ImageView ivHome, ivTickets, ivAccount;
 
-    public ActionBar(Context context, View root) {
+    public ActionBar(Context context, View root, String userId) {
         this.context = context;
+        this.userId = userId;
 
         ivHome = root.findViewById(R.id.iv_home);
         ivTickets = root.findViewById(R.id.iv_buy_tickets);
@@ -35,23 +38,24 @@ public class ActionBar extends AppCompatActivity {
             selectIcon(ivHome);
         }
 
-        ivTickets.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if (ivTickets != null) {
+            ivTickets.setOnClickListener(v -> {
+                selectIcon(ivTickets);
                 Intent intent = new Intent(context, ChuyenRap.class);
+                intent.putExtra("USER_ID", userId); // Bắt đầu truyền ID từ đây
                 context.startActivity(intent);
-            }
-        });
+            });
+        }
 
-        ivAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, chuyen_account.class);
+        if (ivAccount != null) {
+            ivAccount.setOnClickListener(v -> {
+                selectIcon(ivAccount);
+                Intent intent = new Intent(context, Tai_khoan.class);
+                intent.putExtra("USER_ID", userId);
                 context.startActivity(intent);
-            }
-        });
+            });
+        }
     }
-
 
     private void selectIcon(ImageView selectedIcon) {
         for (ImageView icon : icons) {

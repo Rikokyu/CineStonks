@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.models;
 
 public class Ve {
     private String MaVe, TenVe;

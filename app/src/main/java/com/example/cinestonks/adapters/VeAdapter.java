@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,18 +10,28 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cinestonks.R;
+import com.example.cinestonks.models.Ve;
+
 import java.util.List;
 
 public class VeAdapter extends RecyclerView.Adapter<VeAdapter.ViewHolder> {
     private List<Ve> list;
     private OnQuantityChangeListener listener;
+    private int maxTickets = 999; // Mặc định không giới hạn
 
     public interface OnQuantityChangeListener {
-        void onQuantityChanged(); // Hàm này sẽ được gọi khi tăng/giảm số lượng
+        void onQuantityChanged(); 
     }
+
     public VeAdapter(List<Ve> list, OnQuantityChangeListener listener) {
         this.list = list;
         this.listener = listener;
+    }
+
+    // Phương thức để thiết lập số lượng vé tối đa có thể chọn
+    public void setMaxTickets(int maxTickets) {
+        this.maxTickets = maxTickets;
     }
 
     @NonNull
@@ -53,6 +63,11 @@ public class VeAdapter extends RecyclerView.Adapter<VeAdapter.ViewHolder> {
         holder.btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Kiểm tra tổng số vé đã chọn so với số ghế còn trống
+                if (getTotalTickets() >= maxTickets) {
+                    Toast.makeText(v.getContext(), "Không thể chọn thêm. Đã đạt giới hạn ghế trống!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 int currentQty = ve.getQuantity();
                 ve.setQuantity(currentQty + 1);
                 holder.tvQuantity.setText(String.valueOf(ve.getQuantity()));
@@ -61,14 +76,12 @@ public class VeAdapter extends RecyclerView.Adapter<VeAdapter.ViewHolder> {
         });
     }
 
-    // Hàm tính tổng tiền (vẫn giữ như cũ)
     public long getTotalPrice() {
         long total = 0;
         for (Ve v : list) total += (long) v.getGiaTien() * v.getQuantity();
         return total;
     }
 
-    // Hàm tính tổng số vé
     public int getTotalTickets() {
         int count = 0;
         for (Ve v : list) count += v.getQuantity();

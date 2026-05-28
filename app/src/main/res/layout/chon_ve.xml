@@ -80,19 +80,33 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:drawablePadding="8dp"
-                        android:text="Tên rạp chiếu"
+                        android:text="Thể loại"
                         android:textColor="#666"
                         android:textSize="13sp" />
-
+                    <TextView
+                        android:id="@+id/tv_Phong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Phòng chiếu"
+                        android:textColor="#666"
+                        android:textSize="13sp" />
                     <TextView
                         android:id="@+id/tv_suat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:drawablePadding="8dp"
                         android:text="Giờ chiếu"
                         android:textColor="#666"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/tv_AvailableSeats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Số ghế còn trống: Đang tải..."
+                        android:textColor="#E91E63"
+                        android:textStyle="bold"
                         android:textSize="13sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -156,8 +170,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
-
-
         </LinearLayout>
 
         <ImageView

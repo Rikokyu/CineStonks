@@ -1,9 +1,8 @@
-package com.example.cinestonks;
+package com.example.cinestonks.BLL;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cinestonks.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -83,9 +83,12 @@ public class chuyen_account extends AppCompatActivity {
                         if (dbPassword != null && dbPassword.equals(password)) {
                             isLoginSuccess = true;
 
+                            String userId = userSnapshot.getKey(); // Lấy ID người dùng
+
                             Toast.makeText(chuyen_account.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(chuyen_account.this, MainActivity.class);
+                            intent.putExtra("USER_ID", userId); // Truyền ID sang MainActivity
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();

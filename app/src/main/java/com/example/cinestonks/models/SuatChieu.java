@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.models;
 
 public class SuatChieu {
     public void setMaSuat(String maSuat) {

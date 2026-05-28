@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.cinestonks.R;
 
 import java.util.List;
 

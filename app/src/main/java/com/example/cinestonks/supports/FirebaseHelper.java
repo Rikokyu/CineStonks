@@ -1,11 +1,8 @@
-package com.example.cinestonks;
+package com.example.cinestonks.supports;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import androidx.annotation.NonNull;
-import com.google.firebase.database.*;
-import java.util.*;
 
 public class FirebaseHelper {
     // Trong file FirebaseHelper.java

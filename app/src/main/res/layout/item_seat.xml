@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_seat"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_margin="1dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="0dp">
+
+    <TextView
+        android:id="@+id/tv_seat_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+</androidx.cardview.widget.CardView>

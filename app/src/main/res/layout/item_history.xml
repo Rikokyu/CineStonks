@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvMovieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên phim"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày chiếu - Suất chiếu"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCinema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rạp - Phòng"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ghế: A1, A2"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng tiền: 100.000đ"
+                android:textColor="#FF5252"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Đã thanh toán"
+                android:textColor="#4CAF50"
+                android:textStyle="italic" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

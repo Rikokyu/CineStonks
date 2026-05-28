@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.BLL;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cinestonks.R;
+import com.example.cinestonks.adapters.ScreeningAdapter;
+import com.example.cinestonks.models.SuatChieu;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

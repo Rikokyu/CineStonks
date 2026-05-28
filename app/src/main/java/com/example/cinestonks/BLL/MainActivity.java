@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.BLL;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +12,8 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.cinestonks.R;
+import com.example.cinestonks.adapters.posterAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,12 +21,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // Lấy ID người dùng từ Intent
+        userId = getIntent().getStringExtra("USER_ID");
 
         // 1. Xử lý Insets (Padding cho hệ thống)
         View mainView = findViewById(R.id.main);
@@ -39,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         // 2. Khởi tạo ActionBar (Menu dưới)
         View actionBarLayout = findViewById(R.id.layout_actionbar);
         if (actionBarLayout != null) {
-            new ActionBar(this, actionBarLayout);
+            new ActionBar(this, actionBarLayout, userId);
         }
 
         // 3. Khởi tạo ViewPager2 cho Poster

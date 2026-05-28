@@ -1,4 +1,4 @@
-package com.example.cinestonks;
+package com.example.cinestonks.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,16 +8,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.cinestonks.R;
+import com.example.cinestonks.models.Date;
+
 import java.util.List;
 
 public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateViewHolder> {
 
-    // Đổi từ Date thành DateModel để tránh trùng thư viện hệ thống
     private List<Date> dateList;
     private int selectedPosition = 0;
+    private OnDateClickListener listener;
 
-    public DateAdapter(List<Date> dateList) {
+    public interface OnDateClickListener {
+        void onDateClick(Date date);
+    }
+
+    public DateAdapter(List<Date> dateList, OnDateClickListener listener) {
         this.dateList = dateList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -33,7 +42,6 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateViewHolder
         holder.tvDayOfWeek.setText(date.getDayOfWeek());
         holder.tvDateValue.setText(date.getDate());
 
-        // Xử lý màu sắc dựa trên vị trí được chọn
         if (selectedPosition == position) {
             holder.layoutDate.setBackgroundResource(R.drawable.bg_date_selected);
             holder.tvDayOfWeek.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), android.R.color.black));
@@ -48,9 +56,12 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateViewHolder
             int previousSelected = selectedPosition;
             selectedPosition = holder.getAdapterPosition();
 
-            // Chỉ cập nhật lại 2 item thay đổi để tối ưu hiệu năng
             notifyItemChanged(previousSelected);
             notifyItemChanged(selectedPosition);
+
+            if (listener != null) {
+                listener.onDateClick(date);
+            }
         });
     }
 
@@ -65,7 +76,6 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateViewHolder
 
         public DateViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Đảm bảo các ID này trùng khớp với ID trong file item_day.xml
             tvDayOfWeek = itemView.findViewById(R.id.tvDayOfWeek);
             tvDateValue = itemView.findViewById(R.id.tvDateValue);
             layoutDate = itemView.findViewById(R.id.layoutDate);
