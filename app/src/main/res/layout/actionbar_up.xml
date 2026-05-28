@@ -16,6 +16,7 @@
         app:tint="@color/white"
         tools:ignore="ContentDescription" />
     <TextView
+        android:id="@+id/contentAc"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_weight="1"

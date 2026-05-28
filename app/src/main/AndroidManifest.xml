@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,16 +13,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CineStonks">
-        <activity android:name=".ActionBar"></activity>
+
         <activity
-            android:name=".MainActivity"
+            android:name=".supports.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity android:name=".BLL.ChuyenRap" />
+        <activity android:name=".BLL.chon_ghe"/>
+        <activity android:name=".BLL.thanh_toan"/>
+        <activity android:name=".BLL.Tai_khoan"/>
+        <activity android:name=".BLL.LichSuMuaVeActivity"/>
+
+        <activity
+            android:name=".BLL.chon_phim"
+            android:exported="false" />
+
+        <activity
+            android:name=".BLL.chon_ve"
+            android:exported="false" />
+
+        <activity
+            android:name=".BLL.DangKy"
+            android:windowSoftInputMode="stateUnchanged">
+        </activity>
+
+        <activity android:name=".BLL.ActionBar"></activity>
+
+        <activity
+            android:name=".BLL.chuyen_account"
+            android:windowSoftInputMode="stateUnchanged"
+            android:exported="false" />
+
+        <activity
+            android:name=".BLL.MainActivity"
+            android:exported="false" />
+
+    </application>
 </manifest>

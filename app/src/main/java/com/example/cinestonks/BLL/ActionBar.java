@@ -1,24 +1,30 @@
-package com.example.cinestonks;
+package com.example.cinestonks.BLL;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import com.example.cinestonks.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActionBar extends AppCompatActivity {
+public class ActionBar {
     private final List<ImageView> icons = new ArrayList<>();
     private final Context context;
+    private final String userId;
+    ImageView ivHome, ivTickets, ivAccount;
 
-    public ActionBar(Context context, View root) {
+    public ActionBar(Context context, View root, String userId) {
         this.context = context;
-        
-        ImageView ivHome = root.findViewById(R.id.iv_home);
-        ImageView ivTickets = root.findViewById(R.id.iv_buy_tickets);
-        ImageView ivAccount = root.findViewById(R.id.iv_account);
+        this.userId = userId;
+
+        ivHome = root.findViewById(R.id.iv_home);
+        ivTickets = root.findViewById(R.id.iv_buy_tickets);
+        ivAccount = root.findViewById(R.id.iv_account);
 
         if (ivHome != null) icons.add(ivHome);
         if (ivTickets != null) icons.add(ivTickets);
@@ -30,6 +36,24 @@ public class ActionBar extends AppCompatActivity {
 
         if (ivHome != null) {
             selectIcon(ivHome);
+        }
+
+        if (ivTickets != null) {
+            ivTickets.setOnClickListener(v -> {
+                selectIcon(ivTickets);
+                Intent intent = new Intent(context, ChuyenRap.class);
+                intent.putExtra("USER_ID", userId); // Bắt đầu truyền ID từ đây
+                context.startActivity(intent);
+            });
+        }
+
+        if (ivAccount != null) {
+            ivAccount.setOnClickListener(v -> {
+                selectIcon(ivAccount);
+                Intent intent = new Intent(context, Tai_khoan.class);
+                intent.putExtra("USER_ID", userId);
+                context.startActivity(intent);
+            });
         }
     }
 
